@@ -108,12 +108,17 @@ return ++num;
   */
   
   function counterFactory(value) {
-  
+
     // Code here.
   
   
     return {
-
+    inc() {
+      return ++value;
+      },
+  dec() {
+ return --value;
+  }
     }
   }
   
@@ -149,10 +154,12 @@ return ++num;
     var welcomeText = 'You\'re doing awesome, keep it up ';
   
     // code message function here.
-  
+   function message () {
+   return  welcomeText + firstname + " " + lastname+".";
+   }
   
     //Uncommment this to return the value of your message function
-    //return message;
+    return message; 
   
   }
   
@@ -191,9 +198,15 @@ return ++num;
     // outside our lexical scope
     return {
       // Code here.
+      publicMethod() {
+       return privateMethod()
+      }
     };
   
+    publicMethod();
   })();
+  
+  
   
   
   
@@ -209,6 +222,14 @@ return ++num;
     var secret = 143;
 
     return {
+      addToSecret(add) {
+        return secret+=add;
+
+      },
+      takeAwayFromSecret(sub) {
+        return secret -= sub;
+
+      }
       // Code here
     }
   }
@@ -236,10 +257,15 @@ return ++num;
    */
   
   function timeOutCounter() {
+    function t (i) {
+
+    setTimeout(function() {
+        console.log(i)
+    }, i * 1000)
+  }
+  
     for (var i = 0; i <= 5; i++) {
-      setTimeout(function() {
-          console.log(i)
-      }, i * 1000)
+      t(i)
     }
   }
   timeOutCounter();
