@@ -15,12 +15,12 @@ function outer() {
   another variable called 'inner'. */
   
   // Code Here
-  
+  let inner = outer()
   //Once you do that, invoke inner.
   
   //Code Here
   
-  
+  inner()
   
   
   
@@ -51,7 +51,7 @@ function outer() {
   */
   
     //Code Here
-  
+  let callJake = callFriend('Jake');
   
   
   
@@ -68,8 +68,15 @@ function outer() {
   /* Write a function called makeCounter that makes the following code work
   properly. */
   
+
   //Code Here
-  
+  function makeCounter() {
+    var num = 0;
+    return function() {
+return ++num;
+
+    }
+  }
   //Uncomment this once you make your function
   //   var count = makeCounter();
   //   count(); // 1
